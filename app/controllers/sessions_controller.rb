@@ -1,15 +1,21 @@
 class SessionsController < ApplicationController
   def create
-    @user = User.find_or_create_by(uid: auth["uid"]) do |u|
-      u.last_name = auth["info"]["name"].split(/\W+/).last
-      u.first_name = auth["info"]["name"].split(/\W+/).first
-      u.email = auth["info"]["email"]
-      u.image = auth["info"]["image"]
+    if auth = request.env["omniauth.auth"]
+      @user = User.find_or_create_by_omni(auth)
+      session[:user_id] = @user.id
+
+      redirect_to root_path
+    else
+      @user = User.find_by(email: params["email"])
+      binding.pry
+      if @user && @user.authenticate(params[:password])
+        session[:user_id] = @user.id
+
+        redirect_to root_path
+      else
+        render "users/new"
+      end
     end
-
-    session[:user_id] = @user.id
-
-    render "users/home"
   end
 
   def logout

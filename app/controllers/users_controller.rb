@@ -13,6 +13,18 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def create
+    @user = User.create(user_params)
+    @user.save
+    session[:user_id] = @user.id
+
+    redirect_to root_path
+  end
+
+  def new
+    @user = User.new
+  end
+
   def update
     @user.update(user_params)
     render "users/home"
@@ -30,8 +42,9 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(
       :first_name,
-      :password,
       :last_name,
+      :email,
+      :password,
       :phone_number,
       :image,
       :address,

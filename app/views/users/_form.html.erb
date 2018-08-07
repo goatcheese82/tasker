@@ -43,8 +43,12 @@
     <%= f.number_field :phone_number, class: "form-control" %>
   </div>
 
+    <div class="form-group">
+  <%= f.label :password %>
+  <br>
+  <%= f.password_field :password, class: "form-control" %>
+
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>
-  
 <% end %>
