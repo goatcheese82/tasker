@@ -7,7 +7,7 @@ class User < ApplicationRecord
       user.first_name = auth.info.name.split.first
       user.last_name = auth.info.name.split.last
       user.image = auth.info.image
-      user.password_digest = SecureRandom.hex
+      user.password = SecureRandom.hex
     end
   end
 end
