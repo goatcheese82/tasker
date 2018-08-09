@@ -44,7 +44,7 @@ class UsersController < ApplicationController
       :first_name,
       :last_name,
       :email,
-      :password,
+      :password_digest,
       :phone_number,
       :image,
       :address,

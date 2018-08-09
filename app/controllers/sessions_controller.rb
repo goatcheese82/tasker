@@ -6,16 +6,18 @@ class SessionsController < ApplicationController
 
       redirect_to root_path
     else
-      @user = User.find_by(email: params["email"])
-      binding.pry
-      if @user && @user.authenticate(params[:password])
+      @user = User.find_by(email: params["session"]["email"].downcase)
+      if @user && @user.authenticate(params["session"]["password"])
         session[:user_id] = @user.id
 
         redirect_to root_path
       else
-        render "users/new"
+        render "/users/home"
       end
     end
+  end
+
+  def new
   end
 
   def logout
