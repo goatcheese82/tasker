@@ -5,9 +5,19 @@
   <h2>Phone Number: <%= @user.phone_number%></h2>
   <img src="<%= @user.image %>">
 
+  <%= link_to('New Event', '/events/new') %>
+  <br>
+
+  <%= render 'events/list'%>
+
+  <br>
+
   <%= link_to('Logout', '/logout') %>
+
+
 <% else %>
   <%= link_to('Sign up', '/users/new') %>
+  <br>
   <%= link_to('Log in with Facebook!', '/auth/facebook') %>
 
   <%= form_for(:session, url: login_path) do |f| %>

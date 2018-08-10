@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :event_assignments
   resources :events
   resources :admin, only: [:show] do
   end

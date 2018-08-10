@@ -1,8 +1,4 @@
 <h1>Upcoming Events</h1>
-<% @events.each do |event| %>
-<%= event.title %>
+<%= link_to('Home', 'users/home') %>
 <br>
-<%= event.date %>
-<br>
-<%= event.summary %>
-<%end%>
+<%= render 'list' %>

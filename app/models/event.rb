@@ -1,3 +1,4 @@
 class Event < ApplicationRecord
-  has_many :users, through: :assignments
+  has_many :event_assignments
+  has_many :users, through: :event_assignments
 end

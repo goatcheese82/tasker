@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :event_assignments
+  has_many :events, through: :event_assignments
   validates_presence_of :first_name, :last_name, :email
 
   def self.find_or_create_by_omni(auth)

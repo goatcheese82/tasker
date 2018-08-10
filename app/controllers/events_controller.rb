@@ -8,6 +8,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.create(event_params)
+    @event.owner_id = session[:user_id]
     @event.save
 
     redirect_to events_path
@@ -42,7 +43,9 @@ class EventsController < ApplicationController
     params.require(:event).permit(
       :title,
       :date,
-      :summary
+      :summary,
+      :owner_id,
+      user_ids: [],
     )
   end
 end
