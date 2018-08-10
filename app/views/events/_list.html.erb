@@ -1,7 +1,12 @@
+<%= form_tag("/events", method: "get") do %>
+    <%= select_tag "date", options_from_collection_for_select(Event.all, "id", "date"), include_blank: true %>
+    <%= submit_tag "Filter" %>
+<% end %>
 <% @events.each do |event| %>
 <%= event.title %>
 <br>
 <%= event.date %>
 <br>
 <%= event.summary %>
+<br>
 <%end%>

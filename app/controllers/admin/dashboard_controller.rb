@@ -1,4 +1,4 @@
-class Admin::DashboardController < ApplicationController
+class Admin::DashboardController < ActionController::Base
   before_action :authorize
 
   def index

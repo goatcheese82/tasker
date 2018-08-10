@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :events
   namespace :admin do
     get "", to: "dashboard#index", as: "/"
+    resources :users
   end
 
   resources :users

@@ -1,0 +1,6 @@
+<% @users.each do |u| %>
+<%= u.first_name %>
+<%= u.last_name %>
+<%= link_to 'Edit', edit_user_path(u) %>
+<br>
+<%end%>
