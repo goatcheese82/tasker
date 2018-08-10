@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :event_assignments
   has_many :events, through: :event_assignments
   validates_presence_of :first_name, :last_name, :email
+  validates_uniqueness_of :email, :message => "That email is in use"
 
   def self.find_or_create_by_omni(auth)
     where(email: auth.info.email).first_or_create do |user|
