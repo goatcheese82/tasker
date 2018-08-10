@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :address
       t.integer :phone_number
       t.string :password_digest
+      t.boolean :admin, default: false
 
       t.timestamps
     end

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :event_assignments
   resources :events
-  resources :admin, only: [:show] do
+  namespace :admin do
+    get "", to: "dashboard#index", as: "/"
   end
 
   resources :users

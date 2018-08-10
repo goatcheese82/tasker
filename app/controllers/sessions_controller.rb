@@ -10,7 +10,11 @@ class SessionsController < ApplicationController
       if @user && @user.authenticate(params["session"]["password"])
         session[:user_id] = @user.id
 
-        redirect_to root_path
+        if @user.admin
+          redirect_to admin_path
+        else
+          redirect_to root_path
+        end
       else
         render "/users/home"
       end
