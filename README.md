@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is built to help manage small organizations.  It can be used to keep  track of members of the organization as well as their contact information as well as track events and assignments
 
-Things you may want to cover:
-
-* Ruby version
+* Ruby Version 2.4.1
 
 * System dependencies
 
-* Configuration
+Please direct all issues to the issue tracker in this repo.
 
-* Database creation
+* Installation: Fork and Clone this repo.  Run bundle install, start your server!
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

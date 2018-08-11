@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_current_user, only: [:show, :edit, :update, :destroy]
 
   def home
     if session[:user_id]
-      @user = User.find(session[:user_id])
+      @current_user = User.find(session[:user_id])
     end
     @events = Event.all
   end
@@ -40,6 +41,10 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def set_current_user
+    @current_user = User.find(session[:user_id])
   end
 
   def user_params
