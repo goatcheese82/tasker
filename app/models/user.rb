@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :goals
   has_many :event_assignments
   has_many :events, through: :event_assignments
   validates_presence_of :first_name, :last_name, :email
@@ -17,5 +18,9 @@ class User < ApplicationRecord
 
   def downcase_email
     self.email.downcase!
+  end
+
+  def self.set_user
+    @user.id = session params[:user_id]
   end
 end

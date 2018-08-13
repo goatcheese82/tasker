@@ -1,0 +1,22 @@
+<%= form_for @group do |f| %>
+    <% @group.inspect %>
+    <% if @group.group_assignments.present? %>
+        <% f.fields_for :group_assignments do |ga| %>
+            <% user = ga.object.user %>
+            <% user.name %>
+            Admin?
+            <%= ga.check_box :admin %>
+        <%end%>
+    <% else %>
+        Add Users
+        <br>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+        <br>
+        <%= f.label :description%>
+        <%= f.text_field :description%>
+        <br>
+    <% end %>
+
+    <%= f.submit "Edit Group" %>
+<% end  %>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :event_assignments
+  resources :group_assignments
+  resources :groups
   resources :events
   namespace :admin do
     get "", to: "dashboard#index", as: "/"
@@ -7,7 +8,9 @@ Rails.application.routes.draw do
     resources :events
   end
 
-  resources :users
+  resources :users do
+    resources :goals
+  end
   root "users#home"
   get "/auth/facebook/callback" => "sessions#create"
   post "/login", to: "sessions#create"
