@@ -2,11 +2,6 @@ class Admin::UsersController < Admin::DashboardController
   before_action :authorize
   before_action :list_users
 
-  def index
-    self.current_user
-    render :home
-  end
-
   def edit
   end
 

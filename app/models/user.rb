@@ -19,8 +19,4 @@ class User < ApplicationRecord
   def downcase_email
     self.email.downcase!
   end
-
-  def self.set_user
-    @user.id = session params[:user_id]
-  end
 end
