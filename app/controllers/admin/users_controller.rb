@@ -8,6 +8,15 @@ class Admin::UsersController < Admin::DashboardController
   def update
   end
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    User.create(user_params)
+    redirect_to admin_users_path
+  end
+
   private
 
   def list_users
@@ -16,5 +25,18 @@ class Admin::UsersController < Admin::DashboardController
 
   def set_user
     @user = params[:user_id]
+  end
+
+  def user_params
+    params.require(:user).permit(
+      :first_name,
+      :last_name,
+      :email,
+      :password,
+      :phone_number,
+      :image,
+      :address,
+      :admin
+    )
   end
 end

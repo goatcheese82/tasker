@@ -7,6 +7,10 @@ class Admin::EventsController < Admin::DashboardController
   def update
   end
 
+  def new
+    redirect_to new_event_path
+  end
+
   def list_events
     @events = Event.all
   end

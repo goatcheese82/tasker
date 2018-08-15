@@ -21,9 +21,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    if @user.save && !current_user.admin
       session[:user_id] = @user.id
       redirect_to root_path
+    elsif @user.save
+      redirect_to admin_users_path
     else
       render "new"
     end
