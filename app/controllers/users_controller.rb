@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :index]
   before_action :set_current_user, only: [:show, :edit, :update, :destroy]
 
   def home
@@ -13,6 +13,10 @@ class UsersController < ApplicationController
   end
 
   def edit
+  end
+
+  def index
+    @users = User.all
   end
 
   def create
@@ -44,7 +48,11 @@ class UsersController < ApplicationController
   end
 
   def set_current_user
-    @current_user = User.find(session[:user_id])
+    if session[:user_id]
+      @current_user = User.find(session[:user_id])
+    else
+      redirect_to root_path
+    end
   end
 
   def user_params

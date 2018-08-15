@@ -13,4 +13,8 @@ class Admin::UsersController < Admin::DashboardController
   def list_users
     @users = User.all
   end
+
+  def set_user
+    @user = params[:user_id]
+  end
 end

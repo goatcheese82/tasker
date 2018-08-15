@@ -1,0 +1,7 @@
+<%= form_for(@goal) do |g| %>
+    <%= g.label :summary %>
+    <%= g.text_field :summary %>
+    <%= g.label :deadline %>
+    <%= g.date_field :deadline %>
+    <%= g.submit %>
+<% end%>
