@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get "", to: "dashboard#index", as: "/"
     resources :users
     resources :events
+    resources :groups
   end
 
   resources :users do

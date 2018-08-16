@@ -8,5 +8,8 @@
 <h2>Events</h2>
 <%= link_to 'Edit', admin_events_path%>
 <%= link_to 'Add', new_admin_event_path%>
-<h2>Assignments</h2>
+<h2>Groups</h2>
+<%= render '/groups/list'%>
+<br>
+<%= link_to 'Add', new_admin_group_path %>
 

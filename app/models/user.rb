@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :group_assignments
+  has_many :groups, through: :group_assignments
   has_many :goals
   has_many :event_assignments
   has_many :events, through: :event_assignments

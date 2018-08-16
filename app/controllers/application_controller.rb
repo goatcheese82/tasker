@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   def logged_in?
     current_user != nil
   end
+
+  def list_groups
+    @groups = Group.all
+  end
 end

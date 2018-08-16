@@ -1,6 +1,7 @@
 class Admin::DashboardController < ActionController::Base
   layout "admin"
   before_action :authorize
+  before_action :list_groups
 
   def index
   end
@@ -13,5 +14,9 @@ class Admin::DashboardController < ActionController::Base
     else
       redirect_to root_path
     end
+  end
+
+  def list_groups
+    @groups = Group.all
   end
 end

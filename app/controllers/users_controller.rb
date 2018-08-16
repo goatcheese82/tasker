@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :index]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :set_current_user, only: [:show, :edit, :update, :destroy]
 
   def home
-    if session[:user_id]
+    if session[:user_id] && !User.find(session[:user_id]).admin
       @current_user = User.find(session[:user_id])
+    else
+      redirect_to admin_path
     end
     @events = Event.all
   end

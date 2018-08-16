@@ -1,3 +1,10 @@
-<%= form_for @group do |f| %>
-    
+<%= form_for @group do |g| %>
+    <%= g.label :title %>
+    <%= g.text_field :title %>
+    <br>
+    <%= g.label :description %>
+    <%= g.text_field :description%>
+    <br>
+    Set Admin
+    <%= g.submit %>
 <% end  %>
