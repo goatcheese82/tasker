@@ -1,0 +1,10 @@
+<%= form_for(@group_assignment) do |g| %>
+    <%= g.label :user %>
+    <%= g.select 'user_id', options_for_select(@users.collect{ |u| [u.first_name, u.id]}) %>
+    <%= g.label :group %>
+    <%= g.select 'group_id', options_for_select(@groups.collect{ |g| [g.title, g.id]}) %>
+    <%= g.label :group_admin %>
+    <%= g.check_box :group_admin %>
+
+    <%= g.submit %>
+<% end%>
