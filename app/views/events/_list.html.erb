@@ -1,5 +1,5 @@
 <%= form_tag("/events", method: "get") do %>
-    <%= select_tag "date", options_from_collection_for_select(Event.all, "date", "date"), include_blank: true %>
+    <%= select_tag "date", options_for_select(["Today", "Past"]), include_blank: true %>
     <%= submit_tag "Filter" %>
 <% end %>
 <% @events.each do |event| %>
