@@ -3,7 +3,7 @@ class Event < ApplicationRecord
   has_many :users, through: :event_assignments
 
   def self.happening_today
-    where("date >=?", Time.zone.today.beginning_of_day)
+    where("date =?", Time.zone.today.beginning_of_day)
   end
 
   def self.not_is_it_was

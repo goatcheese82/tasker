@@ -3,7 +3,13 @@ class EventsController < ApplicationController
   before_action :new_event, only: [:new]
 
   def index
-    @events = Event.all
+    if params[:date].blank?
+      @events = Event.all
+    elsif params[:date] == "Today"
+      @events = Event.happening_today
+    else
+      @events = Event.not_is_it_was
+    end
   end
 
   def create
@@ -21,6 +27,9 @@ class EventsController < ApplicationController
   end
 
   def update
+    @event = Event.find_by(params[:id])
+    @event.update(event_params)
+    redirect_to events_path
   end
 
   def destroy

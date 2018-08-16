@@ -5,6 +5,7 @@ class Admin::EventsController < Admin::DashboardController
   end
 
   def update
+    redirect_to events_path
   end
 
   def new

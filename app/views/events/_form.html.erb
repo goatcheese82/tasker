@@ -2,7 +2,7 @@
     <%= f.label :title %>
     <%= f.text_field :title %>
     <%= f.label :date %>
-    <%= f.date_field :date %>
+    <%= f.datetime_select :date %>
     <%= f.label :summary %>
     <%= f.text_area :summary%>
     <%= f.collection_check_boxes :user_ids, User.all, :id, :first_name %>
