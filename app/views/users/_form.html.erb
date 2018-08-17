@@ -1,6 +1,6 @@
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
-    <div id="error_explanation">
+    <div>
       <ul>
       <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -9,40 +9,40 @@
     </div>
   <% end %>
 
-  <div class="form-group">
+  <div >
     <%= f.label :first_name %>
     <br>
-    <%= f.text_field :first_name, class: "form-control" %>
+    <%= f.text_field :first_name %>
   </div>
 
-  <div class="form-group">
+  <div >
     <%= f.label :last_name %>
     <br>
-    <%= f.text_field :last_name, class: "form-control" %>
+    <%= f.text_field :last_name %>
   </div>
 
-  <div class="form-group">
+  <div >
     <%= f.label :email %>
     <br>
-    <%= f.text_field :email, class: "form-control" %>
+    <%= f.text_field :email %>
   </div>
 
-  <div class="form-group">
+  <div >
     <%= f.label :address %>
     <br>
-    <%= f.text_field :address, class: "form-control" %>
+    <%= f.text_field :address %>
   </div>
 
-  <div class="form-group">
+  <div >
     <%= f.label :phone_number %>
     <br>
-    <%= f.number_field :phone_number, class: "form-control" %>
+    <%= f.number_field :phone_number %>
   </div>
 
-    <div class="form-group">
+    <div >
   <%= f.label :password %>
   <br>
-  <%= f.password_field :password, class: "form-control" %>
+  <%= f.password_field :password %>
 
   <br>
 
@@ -52,7 +52,7 @@
 
   <br>
 
-  <div class="actions">
-    <%= f.submit class: "btn btn-primary" %>
+  <div>
+    <%= f.submit %>
   </div>
 <% end %>

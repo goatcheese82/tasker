@@ -1,0 +1,58 @@
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div>
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div >
+    <%= f.label :first_name %>
+    <br>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div >
+    <%= f.label :last_name %>
+    <br>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div >
+    <%= f.label :email %>
+    <br>
+    <%= f.text_field :email %>
+  </div>
+
+  <div >
+    <%= f.label :address %>
+    <br>
+    <%= f.text_field :address %>
+  </div>
+
+  <div >
+    <%= f.label :phone_number %>
+    <br>
+    <%= f.number_field :phone_number %>
+  </div>
+
+    <div >
+  <%= f.label :password %>
+  <br>
+  <%= f.password_field :password %>
+
+  <br>
+
+    <% if @current_user && @current_user.admin %>
+      <%= f.label :admin %> <%= f.check_box :admin %>
+    <% end %>
+
+  <br>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

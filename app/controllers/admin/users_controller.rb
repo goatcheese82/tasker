@@ -27,6 +27,10 @@ class Admin::UsersController < Admin::DashboardController
     @user = params[:user_id]
   end
 
+  def set_current_user
+    @current_user = User.find(session[:id])
+  end
+
   def user_params
     params.require(:user).permit(
       :first_name,

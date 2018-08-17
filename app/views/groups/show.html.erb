@@ -4,6 +4,6 @@
 <%= link_to "#{u.first_name}"" " "#{u.last_name}", user_path(u)%>
 <br>
 <% end %>
-    <% if current_user.admin %>
+    <% if @current_user.admin %>
     <%= link_to 'Add Users', new_group_assignment_path%>
     <%end%>
