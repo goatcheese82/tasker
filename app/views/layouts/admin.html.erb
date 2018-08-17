@@ -11,9 +11,10 @@
 
   <body>
   <h1> Welcome <%= link_to 'Admin', admin_path %></h1>
-  <%= link_to 'Logout', '/logout'%>
   <br>
   <br>
     <%= yield %>
+  <br>
+  <%= link_to 'Logout', '/logout'%>
   </body>
 </html>

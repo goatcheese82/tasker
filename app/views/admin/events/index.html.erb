@@ -2,5 +2,6 @@
 <%= e.title %>
 <%= e.date %>
 <%= link_to 'Edit', edit_event_path(e) %>
+<%= link_to 'Delete', event_path(e), method: :delete, data: { confirm: "Are you sure?" }%>
 <br>
 <%end%>

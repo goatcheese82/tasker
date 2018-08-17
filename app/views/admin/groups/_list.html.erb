@@ -1,0 +1,5 @@
+<% @groups.each do |g| %>
+<br>
+<%= link_to g.title, group_path(g) %>
+<%= link_to 'delete', group_path(g), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%end%>

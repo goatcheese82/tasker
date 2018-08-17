@@ -1,5 +1,6 @@
 class Admin::GroupsController < Admin::DashboardController
   def new
+    @group = Group.new
   end
 
   def show
