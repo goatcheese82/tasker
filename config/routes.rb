@@ -25,5 +25,5 @@ Rails.application.routes.draw do
   get "/auth/facebook/callback" => "sessions#create"
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#logout"
-  get "/group_admins", to: "groups#admins"
+  get "users/group_admins", to: "groups#admins"
 end

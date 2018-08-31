@@ -1,1 +1,11 @@
-<%= User.is_a_thing %>
+<% @users.each do |u| %>
+
+<div class="user_card">
+  <h1><%= link_to "#{u.first_name} #{u.last_name}", user_path(u)%></h1>
+    <p>Email: <%= u.email %></p>
+    <p>Address: <%= u.address%></p>
+    <p>Phone Number: <%= u.phone_number%></p>
+  <img src="<%= u.image %>">
+</div>
+
+<% end %>

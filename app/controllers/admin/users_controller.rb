@@ -17,6 +17,9 @@ class Admin::UsersController < Admin::DashboardController
     redirect_to admin_users_path
   end
 
+  def admin_of
+  end
+
   private
 
   def list_users
