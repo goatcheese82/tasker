@@ -12,6 +12,7 @@ class GroupAssignmentsController < ApplicationController
   end
 
   def show
+    @ga = GroupAssignment.find_by(id: params[:id])
   end
 
   def destroy

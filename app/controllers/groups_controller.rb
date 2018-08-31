@@ -21,6 +21,12 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
+  def admins
+  end
+
+  def destroy
+  end
+
   private
 
   def group_params

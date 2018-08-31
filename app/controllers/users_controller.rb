@@ -17,6 +17,10 @@ class UsersController < ApplicationController
   def show
   end
 
+  def group_admins
+    render "users/group_admins"
+  end
+
   def edit
   end
 

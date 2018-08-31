@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2018_08_13_210238) do
     t.string "image"
     t.string "uid"
     t.string "address"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "password_digest"
     t.boolean "admin", default: false
     t.datetime "created_at", null: false

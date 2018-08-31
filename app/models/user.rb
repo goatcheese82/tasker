@@ -18,6 +18,10 @@ class User < ApplicationRecord
     end
   end
 
+  def self.is_a_thing
+    all
+  end
+
   def downcase_email
     self.email.downcase!
   end
