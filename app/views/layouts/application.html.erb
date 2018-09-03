@@ -11,11 +11,15 @@
 
   <body>
   <header>
+  <div class="header_links">
   <%= link_to "Home", "/" %>
+  </div>
   </header>
   <br>
   <br>
+  <div class="body_content">
     <%= yield %>
+  </div>
   <br>
   <br>
   <% if logged_in? %>
