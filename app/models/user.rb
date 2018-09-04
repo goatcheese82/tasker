@@ -25,4 +25,8 @@ class User < ApplicationRecord
   def downcase_email
     self.email.downcase!
   end
+
+  def self.groups_of
+    
+  end
 end

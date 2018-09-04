@@ -18,6 +18,7 @@ class Admin::UsersController < Admin::DashboardController
   end
 
   def admin_of
+    
   end
 
   private

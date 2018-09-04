@@ -1,5 +1,6 @@
 class GoalsController < ApplicationController
   def index
+    @u = User.find(params[:user_id])
   end
 
   def create
@@ -15,6 +16,7 @@ class GoalsController < ApplicationController
   end
 
   def show
+    @u = User.find(params[:user_id])
   end
 
   def update

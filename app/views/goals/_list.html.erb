@@ -1,5 +1,4 @@
 <h2>Goals:</h2>
-<% @u = User.find(session[:user_id]) %>
 <% @u.goals.each do |g| %>
 <%= g.summary %>
 <br>

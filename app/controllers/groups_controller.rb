@@ -21,9 +21,6 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
-  def admins
-  end
-
   def destroy
     @group = Group.find(params[:id])
     @group.destroy

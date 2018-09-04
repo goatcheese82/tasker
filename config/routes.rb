@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :callings
   resources :group_assignments
   resources :groups
   get "/group_assignments/:id(/admins)", to: "users#group_admins"
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :goals, only: [:show, :index, :new, :create]
   end
+
 
   resources :goals
 

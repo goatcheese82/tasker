@@ -9,4 +9,5 @@ class Event < ApplicationRecord
   def self.not_is_it_was
     where("date <?", Time.zone.today.beginning_of_day)
   end
+
 end

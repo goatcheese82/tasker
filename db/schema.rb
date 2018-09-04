@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_13_210238) do
+ActiveRecord::Schema.define(version: 2018_09_03_194440) do
+
+  create_table "callings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "event_assignments", force: :cascade do |t|
     t.integer "user_id"
@@ -60,6 +65,7 @@ ActiveRecord::Schema.define(version: 2018_08_13_210238) do
     t.string "address"
     t.string "phone_number"
     t.string "password_digest"
+    t.date "birthdate"
     t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
