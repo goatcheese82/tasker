@@ -71,6 +71,6 @@ a:hover {
 .user_image {
     position: absolute;
     right: 0px;
-    top: 60px;
-    width: 200px;
+    top: 0px;
+    height: 100%;
 }
