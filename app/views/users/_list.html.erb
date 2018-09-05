@@ -5,7 +5,9 @@
     <p>Email: <%= u.email %></p>
     <p>Address: <%= u.address%></p>
     <p>Phone Number: <%= u.phone_number%></p>
-  <img src="<%= u.image %>">
+  <% if u.image.attached? %>
+  <%= image_tag u.image, :class => "user_image" %>
+  <%end%>
 </div>
 
 <% end %>
