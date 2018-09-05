@@ -13,7 +13,6 @@ body {
     .user_image {
         position: relative;
         width: 200px;
-        transform: rotate(-90deg);
     }
 
 }
@@ -72,7 +71,6 @@ a:hover {
 .user_image {
     position: absolute;
     right: 0px;
-    top: 60px;
-    width: 200px;
-    transform: rotate(-90deg);
+    top: 0px;
+    height: 100%;
 }
