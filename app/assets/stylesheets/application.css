@@ -70,6 +70,8 @@ a:hover {
 
 .user_image {
     position: absolute;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     right: 0px;
     top: 0px;
     height: 100%;
