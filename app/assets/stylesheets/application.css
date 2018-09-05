@@ -41,6 +41,11 @@ header {
 
 .header_links {
     font-size: 2em;
+    color: #fff; 
+}
+
+.header_links a:visited {
+    color: #fff;
 }
 
 .body_content {
