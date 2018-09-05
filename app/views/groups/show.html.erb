@@ -2,13 +2,15 @@
 <br>
 <% @group.users.each do |u| %>
 <div class="user_card">
-  <h1><%= link_to "#{u.first_name} #{u.last_name}", user_path(u)%></h1>
-    <p>Email: <%= u.email %></p>
-    <p>Address: <%= u.address%></p>
-    <p>Phone Number: <%= u.phone_number%></p>
-  <img src="<%= u.image %>">
-</div>
-<% end %>
+    <h1><%= link_to "#{u.first_name} #{u.last_name}", user_path(u)%></h1>
+      <p>Email: <%= mail_to u.email, "#{u.email}"%></p>
+      <p>Address: <%= u.address%></p>
+      <p>Phone Number: <%= u.phone_number %></p>
+      <% if u.image.attached? %>
+  <%= image_tag u.image, :class => "user_image" %>
+  <%end%>
+  </div>
+  <% end %>
     <% if @current_user.admin %>
     <%= link_to 'Add Users', new_group_assignment_path%>
     <%end%>
