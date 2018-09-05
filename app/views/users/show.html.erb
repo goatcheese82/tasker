@@ -2,6 +2,8 @@
   <h2>Email: <%= @user.email %></h2>
   <h2>Address: <%= @user.address%></h2>
   <h2>Phone Number: <%= @user.phone_number%></h2>
-  <img src="<%= @user.image %>">
+    <% if @user.image.attached? %>
+  <%= image_tag @user.image, :class => "user_image" %>
+  <%end%>
 
 

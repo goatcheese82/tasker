@@ -18,8 +18,9 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :goals, only: [:show, :index, :new, :create]
-  end
+    get "/my_groups", to: "users#admin_of"
 
+  end
 
   resources :goals
 
@@ -27,5 +28,4 @@ Rails.application.routes.draw do
   get "/auth/facebook/callback" => "sessions#create"
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#logout"
-  get "users/group_admins", to: "groups#admins"
 end

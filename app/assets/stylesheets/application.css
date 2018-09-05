@@ -9,6 +9,13 @@ body {
     body {
         width: 100%;
     }
+
+    .user_image {
+        position: relative;
+        width: 200px;
+        transform: rotate(-90deg);
+    }
+
 }
 
 p {
@@ -24,6 +31,7 @@ header {
 }
 
 .user_card {
+    position: relative;
     background-color: #ddffff;
     border-radius: 10px;
     width: 75%;
@@ -54,4 +62,12 @@ a:visited {
 
 a:hover {
     color: #ffaaff;
+}
+
+.user_image {
+    position: absolute;
+    right: 0px;
+    top: 60px;
+    width: 200px;
+    transform: rotate(-90deg);
 }

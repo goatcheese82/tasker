@@ -4,7 +4,10 @@
   <h2>Email: <%= @current_user.email %></h2>
   <h2>Address: <%= @current_user.address%></h2>
   <h2>Phone Number: <%= @current_user.phone_number%></h2>
-  <img src="<%= @current_user.image %>">
+  <% if @current_user.image.attached? %>
+  <%= image_tag @current_user.image, :class => "user_image" %>
+  <%end%>
+
 </div>
 </div>
   <%= link_to 'New Event', '/events/new' %>
@@ -16,5 +19,6 @@
 
   <%= link_to 'Set Goal', new_user_goal_path(@current_user)%>
   <br>
+  <%= link_to 'Groups I Own', user_my_groups_path(@current_user)%>
 
-  <%= render 'goals/list' %>
+  <%#= render 'goals/list' %>

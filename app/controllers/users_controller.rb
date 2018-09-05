@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :set_current_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_current_user, only: [:show, :edit, :update, :destroy, :admin_of]
 
   def home
     if session[:user_id] && !User.find(session[:user_id]).admin
@@ -18,6 +18,8 @@ class UsersController < ApplicationController
   end
 
   def admin_of
+    @user = User.find(params[:user_id])
+    @groups = @user.group_assignments.is_admin?
   end
 
   def edit
@@ -83,6 +85,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(
       :first_name,
+      :image,
       :last_name,
       :email,
       :password,

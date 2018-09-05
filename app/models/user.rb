@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates_presence_of :first_name, :last_name, :email
   validates_uniqueness_of :email, :message => "is already in our database"
   before_save :downcase_email
+  has_one_attached :image
 
   def self.find_or_create_by_omni(auth)
     where(email: auth.info.email).first_or_create do |user|
@@ -26,7 +27,4 @@ class User < ApplicationRecord
     self.email.downcase!
   end
 
-  def self.groups_of
-    
-  end
 end
