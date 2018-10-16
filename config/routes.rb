@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :agendas
   resources :callings
   resources :group_assignments
   resources :groups

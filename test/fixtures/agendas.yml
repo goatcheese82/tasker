@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2018-09-26
+  time: 2018-09-26 16:33:22
+  presiding: MyString
+  conducting: MyString
+
+two:
+  date: 2018-09-26
+  time: 2018-09-26 16:33:22
+  presiding: MyString
+  conducting: MyString
