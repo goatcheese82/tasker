@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    render 'users/edit', :layout => false
   end
 
   def index

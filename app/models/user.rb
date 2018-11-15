@@ -23,8 +23,16 @@ class User < ApplicationRecord
     all
   end
 
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
   def downcase_email
     self.email.downcase!
+  end
+
+  def my_goals
+    self.goals
   end
 
 end

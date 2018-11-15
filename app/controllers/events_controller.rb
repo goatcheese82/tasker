@@ -10,6 +10,7 @@ class EventsController < ApplicationController
     else
       @events = Event.not_is_it_was
     end
+    render :layout => false
   end
 
   def create
@@ -21,6 +22,7 @@ class EventsController < ApplicationController
   end
 
   def new
+    render 'events/new', :layout => false
   end
 
   def show

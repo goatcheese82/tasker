@@ -13,6 +13,7 @@ class GoalsController < ApplicationController
   def new
     @goal = Goal.new(user_id: params[:user_id])
     @user = User.find(params[:user_id])
+    render 'goals/new', :layout => false
   end
 
   def show
@@ -31,5 +32,11 @@ class GoalsController < ApplicationController
       :deadline,
       :user_id
     )
+  end
+
+  private
+
+  def set_goal
+    @goal = Goal.find(params[:goal_id])
   end
 end
