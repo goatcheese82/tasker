@@ -67,21 +67,21 @@ class UsersController < ApplicationController
 
   private
 
-  def logged_in?
-    !!session[:user_id]
-  end
+  #def logged_in?
+  #  !!session[:user_id]
+  #end
 
-  def set_user
-    @user = User.find(params[:id])
-  end
+  #def set_user
+  #  @user = User.find(params[:id])
+  #end
 
-  def set_current_user
-    if logged_in?
-      @current_user = User.find(session[:user_id])
-    else
-      redirect_to root_path
-    end
-  end
+  #def set_current_user
+  #  if logged_in?
+  #    @current_user = User.find(session[:user_id])
+  #  else
+  #    redirect_to root_path
+  #  end
+  #end
 
   def user_params
     params.require(:user).permit(
